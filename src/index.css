@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body{
+    background-color: #F5F5F5;
+}
+
+a.active {
+  background-color: #176AE5;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+}
+
+    

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addToLS } from "../../utilities/addToLS";
 
 const DoctorDetails = () => {
 	const { id } = useParams();
+	console.log(id);
+	
 	const data = useLoaderData();
 	const doctor = data?.find((d) => d.registration_no === id);
 
@@ -76,6 +79,16 @@ const DoctorDetails = () => {
 		}
 	}
 
+
+	const handleBooking = (id) => {
+		// stored with registration_no
+		addToLS(id);
+	}
+
+
+
+
+
 	return (
 		<div className="space-y-5 mt-5 container mx-auto">
 			<div className="p-6 bg-white rounded-2xl ">
@@ -104,8 +117,8 @@ const DoctorDetails = () => {
 					<p>{experience} years+ experience</p>
 					<p>Registration No: {registration_no}</p>
 					<p>
-						{availability.map((day) => (
-							<span className=" mr-1 p-1 bg-amber-100 text-amber-400 rounded-2xl">
+						{availability.map((day,index) => (
+							<span key={index} className=" mr-1 p-1 bg-amber-100 text-amber-400 rounded-2xl">
 								{day}
 							</span>
 						))}
@@ -137,6 +150,7 @@ const DoctorDetails = () => {
 				</p>
 				<div className="card-actions justify-center ">
 					<button
+						onClick={() => handleBooking(id)}
 						className="btn btn-primary rounded-3xl"
 						disabled={!isAvailableToday}>
 						{isAvailableToday

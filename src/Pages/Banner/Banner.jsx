@@ -1,7 +1,16 @@
 import React from "react";
 import "./Banner.css";
+import SearchBar from "../../Components/SearchBar/SearchBar";
+import { useNavigate } from "react-router";
 
 const Banner = () => {
+	const navigate = useNavigate();
+
+	const handleBannerSearch = (term) => {
+		if (!term) return;
+		// Go to /doctors and optionally add query param
+		navigate(`/doctors?q=${encodeURIComponent(term)}`);
+	};
 	return (
 		<div>
 			{/* search bar with Hero */}
@@ -17,20 +26,10 @@ const Banner = () => {
 						consultation, book appointments in minutes and receive
 						quality care you can trust.
 					</p>
-					<form
-						className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0"
-						action="">
-						<input
-							className="md:w-96 w-72 rounded-4xl p-3"
-							type="text"
-							placeholder="Search any doctor..."
-						/>
-						<button
-							className="rounded-4xl text-white bg-[#176AE5] p-3 border-2 border-[#176AE5]"
-							type="submit">
-							Search Now
-						</button>
-					</form>
+					<SearchBar
+						onSearch={handleBannerSearch}
+						placeholder="Search any doctor..."
+					/>
 					<div className="flex md:flex-row flex-col items-center justify-center gap-2 overflow-hidden">
 						<img
 							className="w-full h-86 rounded-3xl md:w-1/2"

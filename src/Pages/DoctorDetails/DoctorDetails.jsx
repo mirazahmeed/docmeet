@@ -41,7 +41,8 @@ const DoctorDetails = () => {
 		Thursday: 4,
 		Friday: 5,
 		Saturday: 6,
-	};
+	}; 
+	
 
 	let nextAvailableDateText = null;
 

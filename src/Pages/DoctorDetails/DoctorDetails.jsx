@@ -12,7 +12,7 @@ const DoctorDetails = () => {
 		image,
 		name,
 		education,
-		specialities,
+		specialities, 
 		designation,
 		workplace,
 		fee,
@@ -22,12 +22,12 @@ const DoctorDetails = () => {
 	} = doctor;
 
 	const todayDate = new Date();
-	const todayFormatted = todayDate.toLocaleDateString("en-US", {
-		weekday: "long",
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+	// const todayFormatted = todayDate.toLocaleDateString("en-US", {
+	// 	weekday: "long",
+	// 	year: "numeric",
+	// 	month: "long",
+	// 	day: "numeric",
+	// });
 
 	const todayWeekday = todayDate.toLocaleDateString("en-US", {
 		weekday: "long",

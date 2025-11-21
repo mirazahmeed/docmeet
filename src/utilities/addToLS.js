@@ -19,4 +19,10 @@ const addToLS = (id) => {
 	}
 };
 
-export { getStoredData, addToLS };
+const removeFromLS = (id) => {
+	const storedData = getStoredData();
+	const remaining = storedData.filter((storedId) => storedId !== id);
+	localStorage.setItem("doctorId", JSON.stringify(remaining));
+};
+
+export { getStoredData, addToLS, removeFromLS };

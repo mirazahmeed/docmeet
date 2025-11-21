@@ -4,7 +4,6 @@ import { addToLS } from "../../utilities/addToLS";
 
 const DoctorDetails = () => {
 	const { id } = useParams();
-	console.log(id);
 	
 	const data = useLoaderData();
 	const doctor = data?.find((d) => d.registration_no === id);

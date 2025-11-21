@@ -33,6 +33,11 @@ export const router = createBrowserRouter([
 				Component: Doctors,
 			},
 			{
+				path: "/bookings",
+				loader: () => fetch("/src/assets/doctorsInfo.json"),
+				Component: Bookings,
+			},
+			{
 				path: "/bookings/:id",
 				Component: Bookings,
 			}

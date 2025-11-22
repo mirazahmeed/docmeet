@@ -54,7 +54,9 @@ const Bookings = () => {
 						<p className="text-center text-gray-400">
 							You don't have any appointments yet.
 						</p>
-						<Link to={"/"} className="btn btn-primary">Book an Appointment</Link>
+						<Link to={"/"} className="btn btn-primary">
+							Book an Appointment
+						</Link>
 					</div>
 				)}
 			</div>

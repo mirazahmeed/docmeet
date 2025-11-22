@@ -27,7 +27,7 @@ const Doctor = ({ doctor }) => {
 				<figure className="px-5 py-2 h-64">
 					<img
 						className="w-full h-full object-cover"
-						src={`src/assets/Doctors-pic/${image}`}
+						src={`Doctors-pic/${image}`}
 						alt="Shoes"
 					/>
 				</figure>

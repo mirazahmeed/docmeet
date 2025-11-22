@@ -4,7 +4,7 @@ import { addToLS } from "../../utilities/addToLS";
 
 const DoctorDetails = () => {
 	const { id } = useParams();
-	
+
 	const data = useLoaderData();
 	const doctor = data?.find((d) => d.registration_no === id);
 
@@ -12,7 +12,7 @@ const DoctorDetails = () => {
 		image,
 		name,
 		education,
-		specialities, 
+		specialities,
 		designation,
 		workplace,
 		fee,
@@ -43,8 +43,7 @@ const DoctorDetails = () => {
 		Thursday: 4,
 		Friday: 5,
 		Saturday: 6,
-	}; 
-	
+	};
 
 	let nextAvailableDateText = null;
 
@@ -78,15 +77,10 @@ const DoctorDetails = () => {
 		}
 	}
 
-
 	const handleBooking = (id) => {
 		// stored with registration_no
 		addToLS(id);
-	}
-
-
-
-
+	};
 
 	return (
 		<div className="space-y-5 mt-5 container mx-auto">
@@ -104,7 +98,7 @@ const DoctorDetails = () => {
 				<figure>
 					<img
 						className="w-72 h-96 object-cover"
-						src={`/src/assets/Doctors-pic/${image}`}
+						src={`Doctors-pic/${image}`}
 					/>
 				</figure>
 				<div className="card-body">
@@ -116,8 +110,10 @@ const DoctorDetails = () => {
 					<p>{experience} years+ experience</p>
 					<p>Registration No: {registration_no}</p>
 					<p>
-						{availability.map((day,index) => (
-							<span key={index} className=" mr-1 p-1 bg-amber-100 text-amber-400 rounded-2xl">
+						{availability.map((day, index) => (
+							<span
+								key={index}
+								className=" mr-1 p-1 bg-amber-100 text-amber-400 rounded-2xl">
 								{day}
 							</span>
 						))}

@@ -25,6 +25,7 @@ const BookingDetails = ({ booking, onCancel }) => {
 					onClick={() => onCancel(registration_no)}>
 					Cancel Appointment
 				</button>
+				
 			</div>
 		</div>
 	);

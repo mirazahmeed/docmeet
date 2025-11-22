@@ -15,26 +15,26 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				loader: () => fetch("/src/assets/doctorsInfo.json"),
+				loader: () => fetch("/doctorsInfo.json"),
 				path: "/",
 				Component: Home,
 			},
 			{
 				path: "doctorDetails/:id",
 				loader: async () => {
-					const res = await fetch("/src/assets/doctorsInfo.json");
+					const res = await fetch("/doctorsInfo.json");
 					return res.json();
 				},
 				Component: DoctorDetails,
 			},
 			{
 				path: "/doctors",
-				loader: () => fetch("/src/assets/doctorsInfo.json"),
+				loader: () => fetch("/doctorsInfo.json"),
 				Component: Doctors,
 			},
 			{
 				path: "/bookings",
-				loader: () => fetch("/src/assets/doctorsInfo.json"),
+				loader: () => fetch("/doctorsInfo.json"),
 				Component: Bookings,
 			},
 			{

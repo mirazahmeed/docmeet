@@ -33,12 +33,12 @@ const Banner = () => {
 					<div className="flex md:flex-row flex-col items-center justify-center gap-2 overflow-hidden">
 						<img
 							className="w-full h-86 rounded-3xl md:w-1/2"
-							src="src/assets/C001-assets/banner-img-1.png"
+							src="C001-assets/banner-img-1.png"
 							alt=""
 						/>
 						<img
 							className="w-full h-86 rounded-3xl md:w-1/2"
-							src="src/assets/C001-assets/banner-img-2.jpg"
+							src="C001-assets/banner-img-2.jpg"
 							alt=""
 						/>
 					</div>
